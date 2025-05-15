@@ -1,0 +1,106 @@
+General
+-------
+
+The hccp software is distributed AS IT IS with absolutely no warranty.
+Redistribution is NOT allowed.
+
+If you use the resuls of this program you are required to cite the following papers:
+
+1.Yesylevskyy, S. O., V. N. Kharkyanen, and A. P. Demchenko. 
+  Hierarchical clustering of the correlation patterns: New method of domain 
+  identification in proteins. 
+  Biophys. Chem. 2006. 119:84-93.
+
+2.Yesylevskyy, S. O., V. N. Kharkyanen, and A. P. Demchenko. 
+  Dynamic protein domains: identification, interdependence and stability. 
+  Biophys J, 2006, 91, 670-685.
+
+
+
+Running hccp
+------------
+In the command prompt do:
+ hccp < inp
+where inp is your input file
+
+
+Input
+-----
+
+Please use the sample input file as a template. 
+The comments there are detailed enough.
+File is format-specific!
+Do not add or remove lines - it would not work.
+Only standard PDB files can be read. No CHARMm pdbs and the like, please.
+
+Output
+------
+
+Standard output contains:
+ - Natural number of clusters (most probable for this protein)
+ - Second natural number of clusters (the second probable)
+ - Mean intra-domain correlation and
+ - Mean interdomain correlation for the natural number of clusters.
+ NOTE: These features are not published yet.
+
+ The most useful information is written to the file color.tcl
+ The human-readable lines begin with #. Typical output looks like:
+
+ #-- Number of clusters            2  --------------------------------
+ ...Bla-bla-bla...
+ # (  1|   2: 108)
+ # (  2| 109: 254)
+ # (  1| 255: 284)
+ # (  2| 285: 306)
+      ^  ^    ^
+      |  |    End of segment
+      |  Start of segment
+      Domain
+
+ Domains can consist of many segments, which are continues in sequence.
+ Chain identifiers are added if needed.
+
+ Such blocks of information are written for ALL hierarchical levels.
+ It is a good idea to read the file from the end - largest clusters are there.
+
+ File color.tcl is re-written each time you run hccp with another protein. 
+ Be careful not to overwrite your data!
+
+
+ Using VMD to visualize domains
+ ------------------------------
+
+ - Start VMD
+ - Type "cd <path to the directory where your files reside>" in console
+ - Load your pdb
+ - Type "source color.tcl"
+ 
+ Now you can use the following commands:
+
+  next    - show next hierarchical level
+  prev    - show previous hierarchical level
+  last    - show last level (2 domains) 
+  goto N  - go to the level number N
+
+ The clusters are color-coded. Segments, which appear in blue are not assigned
+ to any cluster larger then 5 reidues (they still can be assigned to smaller
+ clusters).
+
+
+  Possible problems
+  -----------------
+
+  - PDB can not be read:
+   * Check if this PDB is valid. Try to remove the ligands and hetero atoms. 
+     Check the histidine residues - they should be marked HIS, other names 
+     are not supported. 
+
+  - Incorrect number of residues is detected:
+   * The number of residues is determined as a number of CA atoms. If you have
+     some CA missed, you'll got fewer residues. Non-standard residues are also
+     ignored, even if they have CA.
+
+  - Other problems:
+   * Please open GitHub issue
+
+

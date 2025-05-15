@@ -1,0 +1,25 @@
+pdb
+ file   calm.pdb
+ chain  _
+end 
+
+gnm
+  method    ANM
+  selection CA
+  cut_off   7.0
+end
+
+hccp
+ ISE yes
+ force_two_domains yes
+end 
+
+output
+ print_tcl yes
+ print_code_string no
+ print_p_as_line no
+ print_db  no
+ print_mobility no
+ eigen_for_mob  5
+end
+
