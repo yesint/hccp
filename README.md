@@ -1,6 +1,6 @@
 # Hierarchical Clustering of Correlation Patterns (HCCP)
 
-HCCP is the algorithm and software for dynamic domain identification in proteins. See the following papers for details:
+HCCP is an algorithm and software for dynamic domain identification in proteins. See the following papers for details:
 
 1. [Yesylevskyy, S. O., V. N. Kharkyanen, and A. P. Demchenko. Hierarchical clustering of the correlation patterns: New method of domain identification in proteins. Biophys. Chem. 2006. 119:84-93.](https://www.sciencedirect.com/science/article/pii/S0301462205001523)
 2. [Yesylevskyy, S. O., V. N. Kharkyanen, and A. P. Demchenko. Dynamic protein domains: identification, interdependence and stability. Biophys J, 2006, 91, 670-685.](https://www.sciencedirect.com/science/article/pii/S0006349506717660?via%3Dihub)
