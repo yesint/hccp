@@ -5,7 +5,7 @@ HCCP is an algorithm and software for dynamic domain identification in proteins.
 1. [Yesylevskyy, S. O., V. N. Kharkyanen, and A. P. Demchenko. Hierarchical clustering of the correlation patterns: New method of domain identification in proteins. Biophys. Chem. 2006. 119:84-93.](https://www.sciencedirect.com/science/article/pii/S0301462205001523)
 2. [Yesylevskyy, S. O., V. N. Kharkyanen, and A. P. Demchenko. Dynamic protein domains: identification, interdependence and stability. Biophys J, 2006, 91, 670-685.](https://www.sciencedirect.com/science/article/pii/S0006349506717660?via%3Dihub)
 
-The code was written in 2006-2009 in Fortran90 and was never published being available by request only. In 2025 I resurracted it by fixing minor compatibility issues with modern `gfortran` and uploaded to GitHub.
+The code was written in 2006-2009 in Fortran90 and was never published being available by request only. In 2025 I resurrected it by fixing minor compatibility issues with modern `gfortran` and uploaded to GitHub.
 
 Despite being very old and written in Fortran HCCP is rather user-friendly and easy to modify.
 
